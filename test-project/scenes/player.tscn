@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://cpdk0syyriq8h"]
+
+[ext_resource type="Script" path="res://script/player.gd" id="1_41ym6"]
+[ext_resource type="Texture2D" uid="uid://bylouwswk8s0h" path="res://Sprites/Foxy.png" id="1_ggkhq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfu12"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rny3y"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgocr"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwoij"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuvi2"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwg5i"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_614gv"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrl0h"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4f4d"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f5gl"]
+atlas = ExtResource("1_ggkhq")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_liekq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfu12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rny3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgocr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwoij")
+}],
+"loop": true,
+"name": &"daiji",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuvi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwg5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_614gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrl0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4f4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f5gl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("animetor")]
+script = ExtResource("1_41ym6")
+animetor = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_liekq")
+animation = &"walk"
+autoplay = "daiji"
+frame_progress = 0.241879

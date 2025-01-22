@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy10qtpxe5rob"]
+
+[ext_resource type="Texture2D" uid="uid://cf7yyfttaadtw" path="res://Sprites/ForestBackground.png" id="1_hn2bg"]
+[ext_resource type="PackedScene" uid="uid://cpdk0syyriq8h" path="res://scenes/player.tscn" id="2_jaekn"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background1" type="Sprite2D" parent="."]
+position = Vector2(-120, 0)
+texture = ExtResource("1_hn2bg")
+metadata/_edit_lock_ = true
+
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(120, 0)
+texture = ExtResource("1_hn2bg")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.415, 2.415)
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." instance=ExtResource("2_jaekn")]
+position = Vector2(-111, 61)
+scale = Vector2(2.8, 2.59335)
